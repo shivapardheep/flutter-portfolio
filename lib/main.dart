@@ -22,14 +22,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: const FirebaseOptions(
-      apiKey: "AIzaSyBE6gz0fpfPVolT4XxEY9KX5XgG8uzx35Y",
-      authDomain: "flutter-web-app-4b9ad.firebaseapp.com",
-      projectId: "flutter-web-app-4b9ad",
-      storageBucket: "flutter-web-app-4b9ad.appspot.com",
-      messagingSenderId: "91674599974",
-      appId: "1:91674599974:web:308803d7f80fd2b5957ce7",
-      measurementId: "G-QCXCT89XJ2",
-    ),
+        apiKey: "AIzaSyBE6gz0fpfPVolT4XxEY9KX5XgG8uzx35Y",
+        authDomain: "flutter-web-app-4b9ad.firebaseapp.com",
+        databaseURL:
+            "https://flutter-web-app-4b9ad-default-rtdb.firebaseio.com",
+        projectId: "flutter-web-app-4b9ad",
+        storageBucket: "flutter-web-app-4b9ad.appspot.com",
+        messagingSenderId: "91674599974",
+        appId: "1:91674599974:web:76eff3c198145b53957ce7",
+        measurementId: "G-FNFPT5FJDH"),
   );
   runApp(MultiProvider(
     providers: [

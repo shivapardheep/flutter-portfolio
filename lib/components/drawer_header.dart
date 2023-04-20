@@ -23,11 +23,32 @@ class DrawerHeaderWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Spacer(flex: 2),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: CircleAvatar(
-                radius: 50,
-                backgroundImage: AssetImage("assets/images/croped.jpeg"),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.network(
+                  "https://res.cloudinary.com/dmty4l0o3/image/upload/v1681989797/images/profile/croped_aszfp7.jpg",
+                  height: 100,
+                  width: 100,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) {
+                      return child;
+                    } else {
+                      return Lottie.asset(
+                          "assets/icons/profile-completion-progress-bar.json",
+                          height: 100,
+                          width: 100,
+                          repeat: false);
+                    }
+                  },
+                ),
+                // child: Lottie.asset(
+                //     "assets/icons/profile-completion-progress-bar.json",
+                //     height: 100,
+                //     width: 100,
+                //     repeat: false),
               ),
             ),
             Row(

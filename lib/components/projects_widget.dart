@@ -130,12 +130,34 @@ class ProjectContainer extends StatelessWidget {
               child: Stack(
                 children: [
                   Container(
+                    height: double.infinity,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                          image: NetworkImage(dataList[i].url.toString()),
-                          fit: BoxFit.cover),
+                      // image: DecorationImage(
+                      //     // image: NetworkImage(dataList[i].url.toString()),
+                      //     image: NetworkImage(dataList[i].url.toString()),
+                      //     fit: BoxFit.cover),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                        dataList[i].url.toString(),
+                        fit: BoxFit.cover,
+                        loadingBuilder: (context, child, loadingProgress) {
+                          if (loadingProgress == null) {
+                            return child; // If the image has already loaded, return the Image widget
+                          }
+                          return Center(
+                            child: SizedBox(
+                              height: double.infinity / 2,
+                              width: double.infinity / 2,
+                              child: Lottie.asset("assets/icons/walking.json",
+                                  repeat: true),
+                            ),
+                          ); // If the// image is still loading, return the CircularProgressIndicator
+                        },
+                      ),
                     ),
                   ),
                   Padding(

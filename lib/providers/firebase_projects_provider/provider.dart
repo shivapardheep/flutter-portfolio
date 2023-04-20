@@ -39,7 +39,7 @@ class FirebaseProjectsProvider extends ChangeNotifier {
       _workedProjectList.add(obj);
     }
     notifyListeners();
-    print("my project : ${getMyProjectList.length}");
-    print("worked project : ${getWorkedProjectList.length}");
+    // print("my project : ${getMyProjectList.length}");
+    // print("worked project : ${getWorkedProjectList.length}");
   }
 }

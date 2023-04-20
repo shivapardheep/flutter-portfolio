@@ -17,11 +17,10 @@ class BannerWidget extends StatefulWidget {
 class _BannerWidgetState extends State<BannerWidget> {
   bool _isEnableConfetti = false;
   confettiFun() async {
-    print("i am called..");
     setState(() {
       _isEnableConfetti = true;
     });
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 2));
     setState(() {
       _isEnableConfetti = false;
     });

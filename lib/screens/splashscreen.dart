@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Lottie.asset("assets/icons/loading.json",
+                  Lottie.asset("assets/icons/loading_4_dot.json",
                       height: 100, width: 100, repeat: true),
 
                   Text(
