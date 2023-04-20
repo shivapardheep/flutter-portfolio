@@ -1,15 +1,31 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:sivaram_portfolio_web/providers/firebase_projects_provider/provider.dart';
+import 'package:lottie/lottie.dart';
 import 'package:sivaram_portfolio_web/responsive.dart';
 
 import '../constants.dart';
 
-class BannerWidget extends StatelessWidget {
+class BannerWidget extends StatefulWidget {
   const BannerWidget({
     super.key,
   });
+
+  @override
+  State<BannerWidget> createState() => _BannerWidgetState();
+}
+
+class _BannerWidgetState extends State<BannerWidget> {
+  bool _isEnableConfetti = false;
+  confettiFun() async {
+    print("i am called..");
+    setState(() {
+      _isEnableConfetti = true;
+    });
+    await Future.delayed(const Duration(seconds: 1));
+    setState(() {
+      _isEnableConfetti = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -137,10 +153,7 @@ class BannerWidget extends StatelessWidget {
                         width: 150,
                         child: ElevatedButton(
                           onPressed: () {
-                            Provider.of<FirebaseProjectsProviderProvider>(
-                                    context,
-                                    listen: false)
-                                .getData();
+                            confettiFun();
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: primaryColor),
@@ -154,6 +167,12 @@ class BannerWidget extends StatelessWidget {
             ),
           ),
         ),
+        _isEnableConfetti
+            ? AspectRatio(
+                aspectRatio: Responsive.isMobile(context) ? 2.1 : 3,
+                child:
+                    Lottie.asset("assets/icons/confetti_1.json", repeat: true))
+            : const Text(""),
       ],
     );
   }

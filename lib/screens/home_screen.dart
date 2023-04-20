@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sivaram_portfolio_web/constants.dart';
+import 'package:sivaram_portfolio_web/providers/firebase_projects_provider/provider.dart';
 import 'package:sivaram_portfolio_web/responsive.dart';
 
 import '../widget/drawer.dart';
@@ -13,6 +15,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<FirebaseProjectsProvider>().getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;

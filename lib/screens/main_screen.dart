@@ -3,7 +3,7 @@ import 'package:sivaram_portfolio_web/responsive.dart';
 
 import '../components/banner.dart';
 import '../components/middile_number_widget.dart';
-import '../components/my_projects.dart';
+import '../components/projects_widget.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({
@@ -22,11 +22,12 @@ class _MainScreenState extends State<MainScreen> {
           horizontal: Responsive.isMobile(context) ? 15 : 20),
       child: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             BannerWidget(),
             MiddleNumbersWidget(),
-            MyProjectsWidget(),
+            ProjectsWidget(),
           ],
         ),
       ),

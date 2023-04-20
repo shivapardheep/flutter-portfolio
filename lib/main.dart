@@ -33,7 +33,7 @@ void main() async {
   );
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (_) => FirebaseProjectsProviderProvider())
+      ChangeNotifierProvider(create: (_) => FirebaseProjectsProvider())
     ],
     child: MaterialApp(
       home: const MyApp(),
