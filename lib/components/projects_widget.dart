@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'package:sivaram_portfolio_web/models/Project.dart';
+import 'package:sivaram_portfolio_web/models/projects_model.dart';
 import 'package:sivaram_portfolio_web/providers/firebase_projects_provider/provider.dart';
 import 'package:sivaram_portfolio_web/responsive.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -102,7 +102,7 @@ class ProjectsWidget extends StatelessWidget {
 
 class ProjectContainer extends StatelessWidget {
   final int i;
-  final List dataList;
+  final List<ProjectModel> dataList;
 
   const ProjectContainer({super.key, required this.i, required this.dataList});
 
@@ -215,7 +215,8 @@ class ProjectContainer extends StatelessWidget {
                             title: 'play',
                             action: () {
                               if (dataList[i].playStore!.isNotEmpty) {
-                                launchUrlFun(Uri.parse(myProjects[i].playUrl));
+                                launchUrlFun(Uri.parse(
+                                    dataList[i].playStore.toString()));
                               }
                             },
                           ),
