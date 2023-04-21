@@ -37,6 +37,7 @@ void main() async {
       ChangeNotifierProvider(create: (_) => FirebaseProjectsProvider())
     ],
     child: MaterialApp(
+      title: "Sivaram Portfolio",
       home: const MyApp(),
       theme: themeData,
       debugShowCheckedModeBanner: false,
