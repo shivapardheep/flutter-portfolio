@@ -95,6 +95,7 @@ class ProjectsWidget extends StatelessWidget {
           )
         : Center(
             child: Lottie.asset("assets/icons/walking.json"),
+            // child: Text(""),
           );
   }
 }
@@ -229,116 +230,6 @@ class ProjectContainer extends StatelessWidget {
     );
   }
 }
-
-// class WorkedProjectContainer extends StatelessWidget {
-//   final int i;
-//   final FirebaseProjectsProvider provider;
-//
-//   const WorkedProjectContainer(
-//       {super.key, required this.i, required this.provider});
-//   Future<void> launchUrlFun(Uri url) async {
-//     if (await canLaunchUrl(url)) {
-//       launchUrl(url, mode: LaunchMode.externalApplication);
-//     } else {
-//       throw Exception('Could not launch $url');
-//     }
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(vertical: 10),
-//       child: Container(
-//         decoration: BoxDecoration(
-//           color: secondaryColor,
-//           borderRadius: BorderRadius.circular(10),
-//         ),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Expanded(
-//               flex: 4,
-//               child: Stack(
-//                 children: [
-//                   Container(
-//                     width: double.infinity,
-//                     decoration: BoxDecoration(
-//                       borderRadius: BorderRadius.circular(10),
-//                       image: DecorationImage(
-//                           image: AssetImage(workedProject[i].image),
-//                           fit: BoxFit.cover),
-//                     ),
-//                   ),
-//                   Padding(
-//                     padding: const EdgeInsets.all(5),
-//                     child: InkWell(
-//                       onTap: () {},
-//                       splashColor: primaryColor,
-//                       child: Container(
-//                         decoration: BoxDecoration(
-//                           color: darkColor,
-//                           borderRadius: BorderRadius.circular(5),
-//                         ),
-//                         child: const Padding(
-//                           padding: EdgeInsets.all(5),
-//                           child: Text(
-//                             "open source",
-//                             style: TextStyle(color: primaryColor),
-//                           ),
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             Expanded(
-//                 flex: 2,
-//                 child: Padding(
-//                   padding: const EdgeInsets.all(10),
-//                   child: Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: [
-//                       Padding(
-//                         padding: const EdgeInsets.only(bottom: 10),
-//                         child: Text(
-//                           workedProject[i].title,
-//                           style: Theme.of(context).textTheme.titleMedium,
-//                           overflow: TextOverflow.ellipsis,
-//                           softWrap: true,
-//                           maxLines: 1,
-//                         ),
-//                       ),
-//                       Row(
-//                         // mainAxisAlignment:
-//                         // MainAxisAlignment.spaceBetween,
-//                         children: [
-//                           MiniButtonWidget(
-//                             image: 'assets/icons/github.svg',
-//                             title: 'GitHub',
-//                             action: () {},
-//                           ),
-//                           MiniButtonWidget(
-//                             image: 'assets/icons/google.svg',
-//                             title: 'play',
-//                             action: () {
-//                               if (workedProject[i].playUrl.isNotEmpty) {
-//                                 launchUrlFun(
-//                                     Uri.parse(workedProject[i].playUrl));
-//                               }
-//                             },
-//                           ),
-//                         ],
-//                       ),
-//                     ],
-//                   ),
-//                 )),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class MiniButtonWidget extends StatelessWidget {
   final String image;
