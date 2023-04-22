@@ -20,15 +20,19 @@ class _MainScreenState extends State<MainScreen> {
     return Padding(
       padding: EdgeInsets.symmetric(
           horizontal: Responsive.isMobile(context) ? 15 : 20),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            BannerWidget(),
-            MiddleNumbersWidget(),
-            ProjectsWidget(),
-          ],
+      child: SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              BannerWidget(),
+              MiddleNumbersWidget(),
+              ProjectsWidget(),
+            ],
+          ),
         ),
       ),
     );

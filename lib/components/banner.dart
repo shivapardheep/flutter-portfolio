@@ -121,7 +121,7 @@ class _BannerWidgetState extends State<BannerWidget> {
                     ),
                     const SizedBox(width: 10),
                     Responsive.isMobile(context)
-                        ? Container()
+                        ? const Text("")
                         : RichText(
                             text: const TextSpan(
                                 text: "<",

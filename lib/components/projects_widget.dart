@@ -95,7 +95,6 @@ class ProjectsWidget extends StatelessWidget {
           )
         : Center(
             child: Lottie.asset("assets/icons/walking.json"),
-            // child: Text(""),
           );
   }
 }
