@@ -7,11 +7,17 @@ class MiniIntro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String getAge() {
+      int dob = 2002;
+      int curYear = DateTime.now().year;
+      return (curYear - dob).toString();
+    }
+
     return Column(
-      children: const [
-        MiniText(event: 'Country', ans: 'India'),
-        MiniText(event: 'State', ans: 'TamilNadu'),
-        MiniText(event: 'Age', ans: '21'),
+      children: [
+        const MiniText(event: 'Country', ans: 'India'),
+        const MiniText(event: 'State', ans: 'TamilNadu'),
+        MiniText(event: 'Age', ans: getAge()),
       ],
     );
   }

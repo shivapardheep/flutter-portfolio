@@ -11,6 +11,6 @@ const defaultDuration =
     Duration(milliseconds: 1500); // we use it on our animation
 const maxWidth = 1440.0; // max width of our web
 
-const String linkedinUrl = 'https://www.linkedin.com/in/sivaram-pr-1b9738229/';
+const String linkedinUrl = 'https://www.linkedin.com/in/sivaram-pr-a59749229/';
 const String githubUrl = 'https://github.com/shivapardheep';
 const String instagramUrl = 'https://www.instagram.com/affection_addictor_777/';
